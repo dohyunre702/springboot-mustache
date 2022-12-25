@@ -1,0 +1,21 @@
+{{>layouts/header}}
+<!-- 새 글 쓰기 페이지 : 여기에 입력되는 글을 ArticleDto 파라미터를 통해 전달-->
+
+<!--- action /articles/posts url로 던질 것이고 method은 post -->
+<!--- ArticleController 에서 postmapping과 동일한 url 입니다 --->
+<form class="container" action="/articles/posts" method="post">
+    <div class="mb-3">
+        <label class="form-label">title</label>
+        <!--- name 속성안에 Dto의 필드명을 써주면 된다 -->
+        <input type="text" class="form-control" name="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">contents</label>
+        <!--- name 속성안에 Dto의 필드명을 써주면 된다 -->
+        <textarea class="form-control" rows="3" name="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <!--- 리다이렉트 전체 조회페이지로 이동 기능 a태그로 --->
+    <a href="/articles">back</a>
+</form>
+{{>layouts/footer}}
