@@ -1,0 +1,27 @@
+{{>layouts/header}}
+{{#article}}
+    <form class="container" action="/articles/update" method="post">
+        <input name="id" type="hidden" value="{{id}}" />
+        <div class="mb-3">
+            <label class="form-label">제목</label>
+            <input type="text" class="form-control" value="{{title}}" name="title">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">내용</label>
+            <textarea class="form-control" rows="3" name="content">{{content}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/articles/{{id}}">back</a>
+    </form>
+{{/article}}
+{{>layouts/footer}}
+
+
+<!--
+    <form class="container" action="/articles/update" method="post">
+    = articles/update로 post 요청 사용해 전송.
+    <form> tag는 get, post만 쓸 수 있다 (put, delete 사용불가)
+
+    <input name="id" type="hidden" value="{{id}}" />
+    >hidden< 속성 : article의 id값 숨겨서 던지기
+-->
