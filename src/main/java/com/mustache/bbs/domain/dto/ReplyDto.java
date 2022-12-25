@@ -1,6 +1,6 @@
 package com.mustache.bbs.domain.dto;
 
-import com.mustache.bbs.domain.Article;
+import com.mustache.bbs.domain.Reply;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -8,12 +8,11 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @ToString
-public class ArticleDto {
+public class ReplyDto {
     private Long id;
-    private String title;
+    private String author;
     private String content;
-
-    public Article toEntity() {
-        return new Article(id, title, content);
+    public Reply toEntity() {
+        return new Reply(id, author, content);
     }
 }
